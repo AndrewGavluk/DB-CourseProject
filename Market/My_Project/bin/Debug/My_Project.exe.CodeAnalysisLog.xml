@@ -1,0 +1,796 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 11.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="11.0">
+ <Namespaces>
+  <Namespace Name="My_Project">
+   <Messages>
+    <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="Breaking">
+     <Issue Name="Namespace" Certainty="95" Level="Error">Удалите знаки подчеркивания из имени пространства имен "My_Project".</Issue>
+    </Message>
+   </Messages>
+  </Namespace>
+ </Namespaces>
+ <Targets>
+  <Target Name="D:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project\bin\Debug\My_Project.exe">
+   <Modules>
+    <Module Name="my_project.exe">
+     <Messages>
+      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+       <Issue Name="NoStrongName" Certainty="95" Level="CriticalError">Подпишите 'My_Project.exe' с использованием ключа строгого имени.</Issue>
+      </Message>
+      <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="Breaking">
+       <Issue Name="Assembly" Certainty="95" Level="Error">Удалите знаки подчеркивания из имени сборки 'My_Project.exe'.</Issue>
+      </Message>
+      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Error">Пометьте 'My_Project.exe' как CLSCompliant(true), поскольку он предоставляет типы, видимые извне.</Issue>
+      </Message>
+      <Message TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Warning">Так как сборка 'My_Project.exe' содержит файл ResX-ресурса, пометьте его атрибутом NeutralResourcesLanguage, указав язык ресурсов внутри сборки. Это может ускорить поиск ресурса при первом извлечении.</Issue>
+      </Message>
+     </Messages>
+     <Namespaces>
+      <Namespace Name="My_Project">
+       <Types>
+        <Type Name="DBConnect" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="DependsOnFix">
+           <Issue Name="DependsOnFix" Certainty="95" Level="CriticalError">Реализуйте IDisposable для 'DBConnect', поскольку он создает члены следующих типов IDisposable: 'MySqlConnection'. Если 'DBConnect' ранее был доставлен, добавление в данный тип новых членов, реализующих IDisposable, считается критическим изменением для существующих потребителей.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#CloseConnection()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="DBConnect.cs" Line="76">Измените 'DBConnect.CloseConnection()', чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OpenConnection()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="DBConnect.cs" Line="57">Измените 'DBConnect.OpenConnection()', чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Issue>
+             <Issue Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="DBConnect.cs" Line="61">Измените 'DBConnect.OpenConnection()', чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SelectPassword(System.String)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Ликвидировать объекты перед потерей области" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="DBConnect.cs" Line="91">В методе 'DBConnect.SelectPassword(string)' объект 'cmd' не уничтожается во всех возможных путях исключений. Следует вызвать метод System.IDisposable.Dispose для объекта 'cmd' до того, как все ссылки на него будут находиться вне области действия.</Issue>
+            </Message>
+            <Message TypeName="Проверка запросов SQL на уязвимости безопасности" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="DBConnect.cs" Line="91">Строка запроса, переданная 'MySqlCommand.MySqlCommand(string, MySqlConnection)' в 'DBConnect.SelectPassword(string)', может содержать следующие переменные 'query'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TryConnect(System.String,System.String,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="DBConnect.cs" Line="140">Измените 'DBConnect.TryConnect(string, string, int)' так, чтобы перехватывались более специфические, чем 'object', исключения, либо обеспечьте повторное порождение исключения.</Issue>
+            </Message>
+            <Message Id="PWD" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="DBConnect.cs" Line="118">В члене 'DBConnect.TryConnect(string, string, int)' исправьте прописные или строчные буквы строки "PWD" в имени параметра 'PWD', изменив ее на "pwd".</Issue>
+            </Message>
+            <Message Id="TYPE" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="DBConnect.cs" Line="118">В члене 'DBConnect.TryConnect(string, string, int)' исправьте прописные или строчные буквы строки "TYPE" в имени параметра 'TYPE', изменив ее на "type".</Issue>
+            </Message>
+            <Message Id="UID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="DBConnect.cs" Line="118">В члене 'DBConnect.TryConnect(string, string, int)' исправьте прописные или строчные буквы строки "UID" в имени параметра 'UID', изменив ее на "uid".</Issue>
+            </Message>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="DBConnect.cs" Line="133">Измените 'DBConnect.TryConnect(string, string, int)', чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Issue>
+             <Issue Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="DBConnect.cs" Line="136">Измените 'DBConnect.TryConnect(string, string, int)', чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Issue>
+             <Issue Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="DBConnect.cs" Line="142">Измените 'DBConnect.TryConnect(string, string, int)', чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.MessageBox.Show(System.String)" TypeName="Не передавать литералы в качестве локализованных параметров" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="DBConnect.cs" Line="133">Метод 'DBConnect.TryConnect(string, string, int)' передает строку-литерал, как параметр "text" при вызове 'MessageBox.Show(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Connection completed sucsesfuly".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="LogIn" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="LogIn" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="95" Level="Error">Замените термин "LogIn" в имени типа 'LogIn' на предпочитаемый вариант "LogOn".</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#button1_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="LogIn.cs" Line="50">Измените 'LogIn.button1_Click(object, EventArgs)', чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Issue>
+             <Issue Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="LogIn.cs" Line="60">Измените 'LogIn.button1_Click(object, EventArgs)', чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.MessageBox.Show(System.String)" TypeName="Не передавать литералы в качестве локализованных параметров" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="LogIn.cs" Line="60">Метод 'LogIn.button1_Click(object, EventArgs)' передает строку-литерал, как параметр "text" при вызове 'MessageBox.Show(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Выберите тип пользователя".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="LogIn.cs" Line="50">Метод 'LogIn.button1_Click(object, EventArgs)' передает строку-литерал, как параметр "text" при вызове 'MessageBox.Show(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Имеются пустые поля".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Connect" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Так как поле 'LogIn.Connect' является видимым извне объявляющего его типа, необходимо изменить уровень доступа на частный и добавить свойство, имеющее тот же уровень доступа, что и поле, чтобы обеспечить доступ к нему.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="Не передавать литералы в качестве локализованных параметров" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="LogIn.Designer.cs" Line="136">Метод 'LogIn.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "LogIn".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="LogIn.Designer.cs" Line="65">Метод 'LogIn.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Администратор".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="LogIn.Designer.cs" Line="118">Метод 'LogIn.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Брокер".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="LogIn.Designer.cs" Line="76">Метод 'LogIn.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Имя пользователя".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="LogIn.Designer.cs" Line="96">Метод 'LogIn.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Клиент".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="LogIn.Designer.cs" Line="85">Метод 'LogIn.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Пароль".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="LogIn.Designer.cs" Line="106">Метод 'LogIn.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Присоеденится".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="MW_Admin" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="95" Level="Error">Удалите знаки подчеркивания из имени типа 'MW_Admin'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#backgroundWorker1" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">Вероятно, поле 'MW_Admin.backgroundWorker1' нигде не используется, или ему только присваивается значение. Используйте это поле или удалите его.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#button16_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="322">Измените 'MW_Admin.button16_Click(object, EventArgs)' так, чтобы перехватывались более специфические, чем 'Exception', исключения, либо обеспечьте повторное порождение исключения.</Issue>
+            </Message>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="324">Измените 'MW_Admin.button16_Click(object, EventArgs)', чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#button17_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="333">Измените 'MW_Admin.button17_Click(object, EventArgs)' так, чтобы перехватывались более специфические, чем 'Exception', исключения, либо обеспечьте повторное порождение исключения.</Issue>
+            </Message>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="335">Измените 'MW_Admin.button17_Click(object, EventArgs)', чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#button18_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="344">Измените 'MW_Admin.button18_Click(object, EventArgs)' так, чтобы перехватывались более специфические, чем 'Exception', исключения, либо обеспечьте повторное порождение исключения.</Issue>
+            </Message>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="346">Измените 'MW_Admin.button18_Click(object, EventArgs)', чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#button20_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="424">Измените 'MW_Admin.button20_Click(object, EventArgs)' так, чтобы перехватывались более специфические, чем 'Exception', исключения, либо обеспечьте повторное порождение исключения.</Issue>
+            </Message>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="426">Измените 'MW_Admin.button20_Click(object, EventArgs)', чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#button21_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="413">Измените 'MW_Admin.button21_Click(object, EventArgs)' так, чтобы перехватывались более специфические, чем 'Exception', исключения, либо обеспечьте повторное порождение исключения.</Issue>
+            </Message>
+            <Message Id="System.Convert.ToInt64(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="411">В связи с тем, что поведение 'Convert.ToInt64(string)' может изменяться в зависимости от языка и региональных настроек текущего пользователя, следует заменить этот вызов в 'MW_Admin.button21_Click(object, EventArgs)' вызовом 'Convert.ToInt64(string, IFormatProvider)'..Если результат 'Convert.ToInt64(string, IFormatProvider)' базируется на пользовательском вводе, укажите 'CultureInfo.CurrentCulture' в качестве параметра "IFormatProvider". В ином случае, если результат будет основываться на хранимых входных данных и использоваться программой, например при загрузке с диска или из базы данных, следует указать 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="415">Измените 'MW_Admin.button21_Click(object, EventArgs)', чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#dataGridView1_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="311">Измените 'MW_Admin.dataGridView1_MouseClick(object, MouseEventArgs)' так, чтобы перехватывались более специфические, чем 'Exception', исключения, либо обеспечьте повторное порождение исключения.</Issue>
+            </Message>
+            <Message Id="System.Convert.ToDateTime(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="304">В связи с тем, что поведение 'Convert.ToDateTime(string)' может изменяться в зависимости от языка и региональных настроек текущего пользователя, следует заменить этот вызов в 'MW_Admin.dataGridView1_MouseClick(object, MouseEventArgs)' вызовом 'Convert.ToDateTime(string, IFormatProvider)'..Если результат 'Convert.ToDateTime(string, IFormatProvider)' базируется на пользовательском вводе, укажите 'CultureInfo.CurrentCulture' в качестве параметра "IFormatProvider". В ином случае, если результат будет основываться на хранимых входных данных и использоваться программой, например при загрузке с диска или из базы данных, следует указать 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#dataGridView2_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="402">Измените 'MW_Admin.dataGridView2_MouseClick(object, MouseEventArgs)' так, чтобы перехватывались более специфические, чем 'Exception', исключения, либо обеспечьте повторное порождение исключения.</Issue>
+            </Message>
+            <Message Id="System.Convert.ToDateTime(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="396">В связи с тем, что поведение 'Convert.ToDateTime(string)' может изменяться в зависимости от языка и региональных настроек текущего пользователя, следует заменить этот вызов в 'MW_Admin.dataGridView2_MouseClick(object, MouseEventArgs)' вызовом 'Convert.ToDateTime(string, IFormatProvider)'..Если результат 'Convert.ToDateTime(string, IFormatProvider)' базируется на пользовательском вводе, укажите 'CultureInfo.CurrentCulture' в качестве параметра "IFormatProvider". В ином случае, если результат будет основываться на хранимых входных данных и использоваться программой, например при загрузке с диска или из базы данных, следует указать 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="400">В связи с тем, что поведение 'Convert.ToDateTime(string)' может изменяться в зависимости от языка и региональных настроек текущего пользователя, следует заменить этот вызов в 'MW_Admin.dataGridView2_MouseClick(object, MouseEventArgs)' вызовом 'Convert.ToDateTime(string, IFormatProvider)'..Если результат 'Convert.ToDateTime(string, IFormatProvider)' базируется на пользовательском вводе, укажите 'CultureInfo.CurrentCulture' в качестве параметра "IFormatProvider". В ином случае, если результат будет основываться на хранимых входных данных и использоваться программой, например при загрузке с диска или из базы данных, следует указать 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#dataGridView3_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Convert.ToDecimal(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="472">В связи с тем, что поведение 'Convert.ToDecimal(string)' может изменяться в зависимости от языка и региональных настроек текущего пользователя, следует заменить этот вызов в 'MW_Admin.dataGridView3_MouseClick(object, MouseEventArgs)' вызовом 'Convert.ToDecimal(string, IFormatProvider)'..Если результат 'Convert.ToDecimal(string, IFormatProvider)' базируется на пользовательском вводе, укажите 'CultureInfo.CurrentCulture' в качестве параметра "IFormatProvider". В ином случае, если результат будет основываться на хранимых входных данных и использоваться программой, например при загрузке с диска или из базы данных, следует указать 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#dataGridView4_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="525">Измените 'MW_Admin.dataGridView4_MouseClick(object, MouseEventArgs)' так, чтобы перехватывались более специфические, чем 'Exception', исключения, либо обеспечьте повторное порождение исключения.</Issue>
+            </Message>
+            <Message Id="System.Convert.ToDateTime(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="522">В связи с тем, что поведение 'Convert.ToDateTime(string)' может изменяться в зависимости от языка и региональных настроек текущего пользователя, следует заменить этот вызов в 'MW_Admin.dataGridView4_MouseClick(object, MouseEventArgs)' вызовом 'Convert.ToDateTime(string, IFormatProvider)'..Если результат 'Convert.ToDateTime(string, IFormatProvider)' базируется на пользовательском вводе, укажите 'CultureInfo.CurrentCulture' в качестве параметра "IFormatProvider". В ином случае, если результат будет основываться на хранимых входных данных и использоваться программой, например при загрузке с диска или из базы данных, следует указать 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteFromAccInfo(System.Int64)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Int64.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="462">В связи с тем, что поведение 'long.ToString()' может изменяться в зависимости от языка и региональных настроек текущего пользователя, следует заменить этот вызов в 'MW_Admin.DeleteFromAccInfo(long)' вызовом 'long.ToString(IFormatProvider)'. Если результат 'long.ToString(IFormatProvider)' базируется на пользовательском вводе, укажите 'CultureInfo.CurrentCulture' в качестве параметра "IformatProvider". В ином случае, если результат будет храниться и использоваться программой, например при сохранении на диск или в базу данных, следует указать 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteFromAdminInfo(System.Int64)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Int64.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="509">В связи с тем, что поведение 'long.ToString()' может изменяться в зависимости от языка и региональных настроек текущего пользователя, следует заменить этот вызов в 'MW_Admin.DeleteFromAdminInfo(long)' вызовом 'long.ToString(IFormatProvider)'. Если результат 'long.ToString(IFormatProvider)' базируется на пользовательском вводе, укажите 'CultureInfo.CurrentCulture' в качестве параметра "IformatProvider". В ином случае, если результат будет храниться и использоваться программой, например при сохранении на диск или в базу данных, следует указать 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteFromBrockerInfo(System.Int64)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Int64.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="382">В связи с тем, что поведение 'long.ToString()' может изменяться в зависимости от языка и региональных настроек текущего пользователя, следует заменить этот вызов в 'MW_Admin.DeleteFromBrockerInfo(long)' вызовом 'long.ToString(IFormatProvider)'. Если результат 'long.ToString(IFormatProvider)' базируется на пользовательском вводе, укажите 'CultureInfo.CurrentCulture' в качестве параметра "IformatProvider". В ином случае, если результат будет храниться и использоваться программой, например при сохранении на диск или в базу данных, следует указать 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteFromProduct(System.Int32)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="567">В связи с тем, что поведение 'int.ToString()' может изменяться в зависимости от языка и региональных настроек текущего пользователя, следует заменить этот вызов в 'MW_Admin.DeleteFromProduct(int)' вызовом 'int.ToString(IFormatProvider)'. Если результат 'int.ToString(IFormatProvider)' базируется на пользовательском вводе, укажите 'CultureInfo.CurrentCulture' в качестве параметра "IformatProvider". В ином случае, если результат будет храниться и использоваться программой, например при сохранении на диск или в базу данных, следует указать 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteFromTraderInfo(System.Int32)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="290">В связи с тем, что поведение 'int.ToString()' может изменяться в зависимости от языка и региональных настроек текущего пользователя, следует заменить этот вызов в 'MW_Admin.DeleteFromTraderInfo(int)' вызовом 'int.ToString(IFormatProvider)'. Если результат 'int.ToString(IFormatProvider)' базируется на пользовательском вводе, укажите 'CultureInfo.CurrentCulture' в качестве параметра "IformatProvider". В ином случае, если результат будет храниться и использоваться программой, например при сохранении на диск или в базу данных, следует указать 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteRowFromDGV(System.Windows.Forms.MethodInvoker,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="249">Измените 'MW_Admin.DeleteRowFromDGV(MethodInvoker, string)' так, чтобы перехватывались более специфические, чем 'Exception', исключения, либо обеспечьте повторное порождение исключения.</Issue>
+            </Message>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="241">Измените 'MW_Admin.DeleteRowFromDGV(MethodInvoker, string)', чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Issue>
+             <Issue Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="244">Измените 'MW_Admin.DeleteRowFromDGV(MethodInvoker, string)', чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Issue>
+             <Issue Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="251">Измените 'MW_Admin.DeleteRowFromDGV(MethodInvoker, string)', чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.MessageBox.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon)" TypeName="Не передавать литералы в качестве локализованных параметров" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="241">Метод 'MW_Admin.DeleteRowFromDGV(MethodInvoker, string)' передает строку-литерал, как параметр "caption" при вызове 'MessageBox.Show(string, string, MessageBoxButtons, MessageBoxIcon)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "DELETE".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="241">Метод 'MW_Admin.DeleteRowFromDGV(MethodInvoker, string)' передает строку-литерал, как параметр "text" при вызове 'MessageBox.Show(string, string, MessageBoxButtons, MessageBoxIcon)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Sure ??".</Issue>
+            </Message>
+            <Message TypeName="Проверка запросов SQL на уязвимости безопасности" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="238">Строка запроса, переданная 'MySqlCommand.CommandText.set(string)' в 'MW_Admin.DeleteRowFromDGV(MethodInvoker, string)', может содержать следующие переменные 'sql'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="231">Строка запроса, переданная 'MySqlCommand.MySqlCommand(string, MySqlConnection)' в 'MW_Admin.DeleteRowFromDGV(MethodInvoker, string)', может содержать следующие переменные 'sql'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="Не передавать литералы в качестве локализованных параметров" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1325">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "ID продукта".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="181">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "statusStrip1".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="331">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Админ".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="669">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Брокер".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="528">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "ВС, поиск по студентам ".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="537">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Виды Спорта (ВС)".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="645">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "ДС, поиск по СНИЛС".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="573">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "ДС, поиск по полису".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="654">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "ДС, поиск по студенту".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="421">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Дата рождения".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="736">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Дата рождения".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1102">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Дата рождения".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="520">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Для запроса".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="289">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Добавить".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="362">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Добавить".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="911">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Добавить".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="969">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Добавить".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1266">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Добавить".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="627">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Документы студентов (ДС)".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="564">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Достижения студентов".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="487">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Ид. Администратора".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1143">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Ид. Брокера".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="873">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Ид. брокера".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="251">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Ид. продукта".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1359">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Ид. счёта".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1334">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Ид. трейдера".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1184">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Идентификатор".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="446">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Имя".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="761">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Имя".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1127">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Имя".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="793">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Код зарег. Адм".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1054">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Код подразд.".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1316">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Количество".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="405">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Лицензия".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="827">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Лицензия".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1029">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Название банка".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="235">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Название".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1013">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Номер счёта в банке".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="809">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Номер".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1070">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Номер".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="219">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Описание".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="430">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Отчество".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="745">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Отчество".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1111">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Отчество".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="478">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Пароль".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="857">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Пароль".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1175">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Пароль".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1350">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Пароль".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="555">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Поиск по достижениям".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="546">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Поиск по студентам".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="195">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Продукт".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="278">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Редактировать".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="351">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Редактировать".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="900">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Редактировать".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="958">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Редактировать".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1255">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Редактировать".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="210">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Редактор".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="387">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Редактор".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="700">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Редактор".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1004">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Редактор".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1287">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Редактор".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="609">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "СГ, поиск по  студенту".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="600">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "СГ, поиск по группе".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1086">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Серия паспорта".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="818">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Серия".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="718">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Срок действия".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="582">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Студенты групп (СГ)".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1235">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Счёт".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="618">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "ТГ, поиск по группе".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="636">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "ТГ, поиск по тренеру".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1396">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Торговая Платформа".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="938">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Трейдер".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="591">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Тренеры групп(ТГ)".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="267">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Удалить".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="340">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Удалить".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="889">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Удалить".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="947">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Удалить".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1244">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Удалить".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="462">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Фамилия".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="777">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Фамилия".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1152">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'Control.Text.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "Фамилия".</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.DateTimePicker.set_CustomFormat(System.String)" TypeName="Не передавать литералы в качестве локализованных параметров" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="391">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'DateTimePicker.CustomFormat.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "yyyy-MM-dd".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="704">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'DateTimePicker.CustomFormat.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "yyyy-MM-dd".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="722">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'DateTimePicker.CustomFormat.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "yyyy-MM-dd".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.Designer.cs" Line="1040">Метод 'MW_Admin.InitializeComponent()' передает строку-литерал, как параметр "value" при вызове 'DateTimePicker.CustomFormat.set(string)'. Вместо этого выполните поиск следующей строки (строк) в таблице источника: "yyyy-MM-dd".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InsertRowToDGV(System.Windows.Forms.MethodInvoker,MySql.Data.MySqlClient.MySqlCommand)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="199">Измените 'MW_Admin.InsertRowToDGV(MethodInvoker, MySqlCommand)' так, чтобы перехватывались более специфические, чем 'Exception', исключения, либо обеспечьте повторное порождение исключения.</Issue>
+            </Message>
+            <Message Id="MSC" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="187">Параметр 'MSC' в 'MW_Admin.InsertRowToDGV(MethodInvoker, MySqlCommand)' никогда не используется. Удалите этот параметр или используйте его в теле метода.</Issue>
+            </Message>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="194">Измените 'MW_Admin.InsertRowToDGV(MethodInvoker, MySqlCommand)', чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Issue>
+             <Issue Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="201">Измените 'MW_Admin.InsertRowToDGV(MethodInvoker, MySqlCommand)', чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#timer1" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">Вероятно, поле 'MW_Admin.timer1' нигде не используется, или ему только присваивается значение. Используйте это поле или удалите его.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#timer2" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">Вероятно, поле 'MW_Admin.timer2' нигде не используется, или ему только присваивается значение. Используйте это поле или удалите его.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Update_dataGridView1()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="cmd" TypeName="VariableNamesShouldNotMatchFieldNames" Category="Microsoft.Maintainability" CheckId="CA1500" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Name="Local" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="259">Переменная 'cmd', объявленная в 'MW_Admin.Update_dataGridView1()', и поле экземпляра типа имеют одно и то же имя. Измените имя одного из этих элементов.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Update_dataGridView2()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="cmd" TypeName="VariableNamesShouldNotMatchFieldNames" Category="Microsoft.Maintainability" CheckId="CA1500" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Name="Local" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="354">Переменная 'cmd', объявленная в 'MW_Admin.Update_dataGridView2()', и поле экземпляра типа имеют одно и то же имя. Измените имя одного из этих элементов.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Update_dataGridView3()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="data" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="440">Исправьте прописные или строчные буквы строки "data" в имени члена 'MW_Admin.Update_dataGridView3()', изменив ее на "Data".</Issue>
+            </Message>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="440">Удалите знаки подчеркивания из имени члена 'MW_Admin.Update_dataGridView3()'.</Issue>
+            </Message>
+            <Message Id="cmd" TypeName="VariableNamesShouldNotMatchFieldNames" Category="Microsoft.Maintainability" CheckId="CA1500" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Name="Local" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="440">Переменная 'cmd', объявленная в 'MW_Admin.Update_dataGridView3()', и поле экземпляра типа имеют одно и то же имя. Измените имя одного из этих элементов.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Update_dataGridView4()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="data" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="485">Исправьте прописные или строчные буквы строки "data" в имени члена 'MW_Admin.Update_dataGridView4()', изменив ее на "Data".</Issue>
+            </Message>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="485">Удалите знаки подчеркивания из имени члена 'MW_Admin.Update_dataGridView4()'.</Issue>
+            </Message>
+            <Message Id="cmd" TypeName="VariableNamesShouldNotMatchFieldNames" Category="Microsoft.Maintainability" CheckId="CA1500" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Name="Local" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="485">Переменная 'cmd', объявленная в 'MW_Admin.Update_dataGridView4()', и поле экземпляра типа имеют одно и то же имя. Измените имя одного из этих элементов.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Update_dataGridView5()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="data" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="541">Исправьте прописные или строчные буквы строки "data" в имени члена 'MW_Admin.Update_dataGridView5()', изменив ее на "Data".</Issue>
+            </Message>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="541">Удалите знаки подчеркивания из имени члена 'MW_Admin.Update_dataGridView5()'.</Issue>
+            </Message>
+            <Message Id="cmd" TypeName="VariableNamesShouldNotMatchFieldNames" Category="Microsoft.Maintainability" CheckId="CA1500" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Name="Local" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="541">Переменная 'cmd', объявленная в 'MW_Admin.Update_dataGridView5()', и поле экземпляра типа имеют одно и то же имя. Измените имя одного из этих элементов.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateAccInfo(System.Int64,System.String,System.Int64,System.String,System.Double)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Double.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="457">В связи с тем, что поведение 'double.ToString()' может изменяться в зависимости от языка и региональных настроек текущего пользователя, следует заменить этот вызов в 'MW_Admin.UpdateAccInfo(long, string, long, string, double)' вызовом 'double.ToString(IFormatProvider)'. Если результат 'double.ToString(IFormatProvider)' базируется на пользовательском вводе, укажите 'CultureInfo.CurrentCulture' в качестве параметра "IformatProvider". В ином случае, если результат будет храниться и использоваться программой, например при сохранении на диск или в базу данных, следует указать 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.Int64.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="457">В связи с тем, что поведение 'long.ToString()' может изменяться в зависимости от языка и региональных настроек текущего пользователя, следует заменить этот вызов в 'MW_Admin.UpdateAccInfo(long, string, long, string, double)' вызовом 'long.ToString(IFormatProvider)'. Если результат 'long.ToString(IFormatProvider)' базируется на пользовательском вводе, укажите 'CultureInfo.CurrentCulture' в качестве параметра "IformatProvider". В ином случае, если результат будет храниться и использоваться программой, например при сохранении на диск или в базу данных, следует указать 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="457">В связи с тем, что поведение 'long.ToString()' может изменяться в зависимости от языка и региональных настроек текущего пользователя, следует заменить этот вызов в 'MW_Admin.UpdateAccInfo(long, string, long, string, double)' вызовом 'long.ToString(IFormatProvider)'. Если результат 'long.ToString(IFormatProvider)' базируется на пользовательском вводе, укажите 'CultureInfo.CurrentCulture' в качестве параметра "IformatProvider". В ином случае, если результат будет храниться и использоваться программой, например при сохранении на диск или в базу данных, следует указать 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateAdminInfo(System.Int64,System.String,System.String,System.String,System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Int64.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="504">В связи с тем, что поведение 'long.ToString()' может изменяться в зависимости от языка и региональных настроек текущего пользователя, следует заменить этот вызов в 'MW_Admin.UpdateAdminInfo(long, string, string, string, string, string, string)' вызовом 'long.ToString(IFormatProvider)'. Если результат 'long.ToString(IFormatProvider)' базируется на пользовательском вводе, укажите 'CultureInfo.CurrentCulture' в качестве параметра "IformatProvider". В ином случае, если результат будет храниться и использоваться программой, например при сохранении на диск или в базу данных, следует указать 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateBrockerInfo(System.Int64,System.String,System.Int64,System.Int64,System.Int64,System.Int64,System.String,System.String,System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Int64.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="377">В связи с тем, что поведение 'long.ToString()' может изменяться в зависимости от языка и региональных настроек текущего пользователя, следует заменить этот вызов в 'MW_Admin.UpdateBrockerInfo(long, string, long, long, long, long, string, string, string, string, string)' вызовом 'long.ToString(IFormatProvider)'. Если результат 'long.ToString(IFormatProvider)' базируется на пользовательском вводе, укажите 'CultureInfo.CurrentCulture' в качестве параметра "IformatProvider". В ином случае, если результат будет храниться и использоваться программой, например при сохранении на диск или в базу данных, следует указать 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateDGV(System.Windows.Forms.DataGridView,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="150">Измените 'MW_Admin.UpdateDGV(DataGridView, string)' так, чтобы перехватывались более специфические, чем 'Exception', исключения, либо обеспечьте повторное порождение исключения.</Issue>
+             <Issue Certainty="95" Level="CriticalError" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="177">Измените 'MW_Admin.UpdateDGV(DataGridView, string)' так, чтобы перехватывались более специфические, чем 'Exception', исключения, либо обеспечьте повторное порождение исключения.</Issue>
+            </Message>
+            <Message Id="MSCB" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="145">'MW_Admin.UpdateDGV(DataGridView, string)' объявляет переменную 'MSCB' типа 'MySqlCommandBuilder', которая никогда не используется или которой только присваивается значение. Используйте эту переменную, или удалите ее.</Issue>
+            </Message>
+            <Message TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="141">Обязательно задавайте значение свойства Locale DataTable каждый раз, когда 'MW_Admin.UpdateDGV(DataGridView, string)' создает экземпляр этого типа.</Issue>
+            </Message>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="152">Измените 'MW_Admin.UpdateDGV(DataGridView, string)', чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Issue>
+             <Issue Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="179">Измените 'MW_Admin.UpdateDGV(DataGridView, string)', чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Issue>
+            </Message>
+            <Message TypeName="Ликвидировать объекты перед потерей области" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="141">В методе 'MW_Admin.UpdateDGV(DataGridView, string)' вызовите System.IDisposable.Dispose для объекта 'DT' перед тем, как все ссылки на него будут вне области видимости.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="145">В методе 'MW_Admin.UpdateDGV(DataGridView, string)' вызовите System.IDisposable.Dispose для объекта 'MSCB' перед тем, как все ссылки на него будут вне области видимости.</Issue>
+            </Message>
+            <Message TypeName="Не ликвидировать объекты несколько раз" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="181">Объект "'DT'" можно удалять более одного раза в методе 'MW_Admin.UpdateDGV(DataGridView, string)'. Чтобы избежать исключения System.ObjectDisposedException, следует вызывать метод "Dispose" для объекта только один раз.: Lines: 181</Issue>
+            </Message>
+            <Message TypeName="Проверка запросов SQL на уязвимости безопасности" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="144">Строка запроса, переданная 'MySqlDataAdapter.MySqlDataAdapter(string, MySqlConnection)' в 'MW_Admin.UpdateDGV(DataGridView, string)', может содержать следующие переменные 'str'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateProductInfo(System.Int32,System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="562">В связи с тем, что поведение 'int.ToString()' может изменяться в зависимости от языка и региональных настроек текущего пользователя, следует заменить этот вызов в 'MW_Admin.UpdateProductInfo(int, string, string)' вызовом 'int.ToString(IFormatProvider)'. Если результат 'int.ToString(IFormatProvider)' базируется на пользовательском вводе, укажите 'CultureInfo.CurrentCulture' в качестве параметра "IformatProvider". В ином случае, если результат будет храниться и использоваться программой, например при сохранении на диск или в базу данных, следует указать 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateRowToDGV(System.Windows.Forms.MethodInvoker,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="223">Измените 'MW_Admin.UpdateRowToDGV(MethodInvoker, string)' так, чтобы перехватывались более специфические, чем 'Exception', исключения, либо обеспечьте повторное порождение исключения.</Issue>
+            </Message>
+            <Message Id="MSC" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="209">'MW_Admin.UpdateRowToDGV(MethodInvoker, string)' объявляет переменную 'MSC' типа 'MySqlCommand', которая никогда не используется или которой только присваивается значение. Используйте эту переменную, или удалите ее.</Issue>
+            </Message>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="218">Измените 'MW_Admin.UpdateRowToDGV(MethodInvoker, string)', чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Issue>
+             <Issue Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="225">Измените 'MW_Admin.UpdateRowToDGV(MethodInvoker, string)', чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Issue>
+            </Message>
+            <Message TypeName="Ликвидировать объекты перед потерей области" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="209">В методе 'MW_Admin.UpdateRowToDGV(MethodInvoker, string)' вызовите System.IDisposable.Dispose для объекта 'MSC' перед тем, как все ссылки на него будут вне области видимости.</Issue>
+            </Message>
+            <Message TypeName="Проверка запросов SQL на уязвимости безопасности" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="214">Строка запроса, переданная 'MySqlCommand.CommandText.set(string)' в 'MW_Admin.UpdateRowToDGV(MethodInvoker, string)', может содержать следующие переменные 'sql'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="209">Строка запроса, переданная 'MySqlCommand.MySqlCommand(string, MySqlConnection)' в 'MW_Admin.UpdateRowToDGV(MethodInvoker, string)', может содержать следующие переменные 'sql'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateTraderInfo(System.Int64,System.String,System.Int64,System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.String,System.Int32)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Int64.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2017-01-08 14:00:32Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="d:\My_Project(DBT)\Programm_0.17.1\Programm 0.16\My_Project\My_Project" File="MW_Admin.cs" Line="284">В связи с тем, что поведение 'long.ToString()' может изменяться в зависимости от языка и региональных настроек текущего пользователя, следует заменить этот вызов в 'MW_Admin.UpdateTraderInfo(long, string, long, string, string, string, string, int, int, int, string, int)' вызовом 'long.ToString(IFormatProvider)'. Если результат 'long.ToString(IFormatProvider)' базируется на пользовательском вводе, укажите 'CultureInfo.CurrentCulture' в качестве параметра "IformatProvider". В ином случае, если результат будет храниться и использоваться программой, например при сохранении на диск или в базу данных, следует указать 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
+   <Name>Сборки должны иметь допустимые строгие имена</Name>
+   <Description>Либо строгое имя у сборки отсутствует или недействительно, либо действительность строгого имени зависит от конфигурации компьютера. В этом состоянии не следует выполнять развертывание сборки. Наиболее общие причины этого: 1). После подписания содержимое сборки было изменено. 2). Сбой в процессе подписания. 3). Сборка была подписана с задержкой. 4). В реестре существует раздел, разрешивший успешное выполнение проверки (чего не было бы в противном случае).</Description>
+   <Resolution Name="NoStrongName">Подпишите {0} с использованием ключа строгого имени.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182127(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823">
+   <Name>Избегайте неиспользуемых частных полей</Name>
+   <Description>В сборке обнаружены частные поля, к которым не осуществляется доступ. Если это сообщение об этом нарушении выводится по ошибке, отправьте отчет о нем в группу анализа кода Visual Studio.</Description>
+   <Resolution Name="Default">Вероятно, поле {0} нигде не используется, или ему только присваивается значение. Используйте это поле или удалите его.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms245042(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+   <Name>Не перехватывайте типы общих исключений</Name>
+   <Description>Не следует перехватывать исключения типа Exception или SystemException. Перехватывание исключений общего назначения может скрыть от пользователя библиотеки ошибки времени выполнения и осложнить процесс отладки. Перехватывать следует только те исключения, которые вы можете правильно обработать.</Description>
+   <Resolution Name="Default">Измените {0} так, чтобы перехватывались более специфические, чем {1}, исключения, либо обеспечьте повторное порождение исключения.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182137(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051">
+   <Name>Не объявляйте видимые поля экземпляров</Name>
+   <Description>Поля экземпляров, видимые вне типа, в котором они объявлены, ограничивают возможность изменения сведений о реализации, относящихся к этим элементам данных. Вместо этого используйте свойства. Они не влияют на удобство использования или производительность, но обеспечивают гибкость, скрывая сведения о реализации для используемых данных.</Description>
+   <Resolution Name="Default">Так как поле {0} является видимым извне объявляющего его типа, необходимо изменить уровень доступа на частный и добавить свойство, имеющее тот же уровень доступа, что и поле, чтобы обеспечить доступ к нему.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182141(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709">
+   <Name>Идентификаторы должны иметь правильное сочетание прописных и строчных букв</Name>
+   <Description>Идентификаторы типа, пространства имен и членов следуют стилю имен Pascal, а идентификаторы параметров используют "верблюжий" (camel) стиль имен. Двухсимвольный акроним в этих идентификаторах должен записываться прописными буквами, например, System.IO вместо System.Io. Трех- или более символьные акронимы должны следовать стилю Pascal, например, System.Xml вместо System.XML. По соглашению о стиле имен Pascal в составных словах прописной буквой выделяется первая буква каждого слова, например BackColor. По соглашению о "верблюжьем" стиле имен первая буква первого слова будет строчной, а первые буквы всех последующих слов будут прописными, например backgroundColor. Хотя на практике некоторые двухбуквенные акронимы часто не содержат две прописные буквы, правило остается в силе. Например, часто пишут "DbConnection", но это неправильно; пишите "DBConnection". Нарушение этого правила могло бы потребоваться для совместимости с существующими неуправляемыми схемами символов. В общем случае эти символы не должны быть видимы вне использующей их сборки.</Description>
+   <Resolution Name="Member">Исправьте прописные или строчные буквы строки "{0}" в имени члена {1}, изменив ее на "{2}".</Resolution>
+   <Resolution Name="MemberParameter">В члене {0} исправьте прописные или строчные буквы строки "{1}" в имени параметра {2}, изменив ее на "{3}".</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182240(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="85">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707">
+   <Name>Идентификаторы не должны содержать знаки подчеркивания</Name>
+   <Description>Не используйте знаки подчеркивания в именах идентификаторов. Некоторые из идентификаторов, созданных для приложений Visual Studio, содержат знаки подчеркивания. В открытых идентификаторах подчеркиваний следует избегать.</Description>
+   <Resolution Name="Assembly">Удалите знаки подчеркивания из имени сборки {0}.</Resolution>
+   <Resolution Name="Member">Удалите знаки подчеркивания из имени члена {0}.</Resolution>
+   <Resolution Name="Namespace">Удалите знаки подчеркивания из имени пространства имен "{0}".</Resolution>
+   <Resolution Name="Type">Удалите знаки подчеркивания из имени типа {0}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182245(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
+   <Name>Пометьте сборки атрибутом CLSCompliantAttribute</Name>
+   <Description>Сборки должны явно объявлять о своей CLS-совместимости при помощи атрибута CLSCompliant. Сборка без этого атрибута не является CLS-совместимой. Сборки, модули и типы могут быть CLS-совместимыми, даже если некоторые их части не являются CLS-совместимыми. Применимы следующие правила: 1). Если элемент помечен как CLSCompliant, все его несовместимые члены должны иметь атрибут CLSCompliant, аргументу которого установлено значение False. 2). Каждый CLS-несовместимый член должен быть дополнен сравнимым CLS-совместимым альтернативным членом.</Description>
+   <Resolution Name="Default">Пометьте {0} как CLSCompliant(true), поскольку он предоставляет типы, видимые извне.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182156(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824">
+   <Name>Помечайте сборки атрибутом NeutralResourcesLanguageAttribute</Name>
+   <Description>Атрибут NeutralResourcesLanguage оповещает ResourceManager о языке, используемом для объявления в сборке ресурсов, нейтральных по языку и региональным параметрам. При поиске ресурсов с теми же языком и региональными параметрами, что и нейтральные по языку ресурсы, ResourceManager автоматически использует ресурсы, расположенные в основной сборке, и не ищет вспомогательную сборку с текущими языком и региональными параметрами интерфейса пользователя для текущего потока. Это улучшает поиск первого загруженного ресурса и может уменьшить рабочие наборы.</Description>
+   <Resolution Name="Default">Так как сборка {0} содержит файл ResX-ресурса, пометьте его атрибутом NeutralResourcesLanguage, указав язык ресурсов внутри сборки. Это может ускорить поиск ресурса при первом извлечении.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb385967(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804">
+   <Name>Удалите неиспользуемые локальные переменные</Name>
+   <Description>Удалите локальные переменные, которые не используются или которым только присваиваются значения в реализациях методов.</Description>
+   <Resolution Name="Default">{0} объявляет переменную {1} типа {2}, которая никогда не используется или которой только присваивается значение. Используйте эту переменную, или удалите ее.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182278(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801">
+   <Name>Проверьте неиспользуемые параметры</Name>
+   <Description>Проверьте параметры в не-виртуальных методах, не используемые в теле метода, и убедитесь, что отсутствие доступа к ним не нарушает правильность кода. Неиспользуемые параметры влекут издержки производительности и обслуживания. Иногда нарушение этого правила может указывать на ошибку в реализации метода (т.е. параметр в действительности должен использоваться в теле метода). Исключите предупреждения этого правила, если параметр должен существовать из-за совместимости с предыдущими версиями.</Description>
+   <Resolution Name="Default">Параметр {0} в {1} никогда не используется. Удалите этот параметр или используйте его в теле метода.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182268(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="usagerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306">
+   <Name>Задавайте языковой стандарт для типов данных</Name>
+   <Description>В большинстве случаев значение Locale должно быть явно задано как CultureInfo.InvariantCulture для экземпляров DataSet и DataTable. При создании экземпляров DataSet или DataTable для Locale задается значение, соответствующее текущему языку и региональным настройкам. В большинстве случаев для Locale следует задать значение CultureInfo.InvariantCulture, чтобы обеспечить верное поведение при сортировке для любых языков и региональных настроек.</Description>
+   <Resolution Name="Default">Обязательно задавайте значение свойства Locale {0} каждый раз, когда {1} создает экземпляр этого типа.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182188(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
+   <Name>Указывайте IFormatProvider</Name>
+   <Description>Если существует перегрузка, которая принимает аргумент IFormatProvider, следует всегда вызывать ее, а не другую перегрузку, не принимающую этот аргумент. Некоторые методы во время выполнения преобразовывают значение в представление строки или из него. Они принимают строковый параметр, который содержит один или несколько знаков, которые называются спецификаторами формата и указывают, как следует преобразовывать значение. Если смысл спецификатора формата зависит от языка и региональных настроек, форматируемый объект предоставляет действительные символы, которые используются в представлении строки. В сценариях, в которых поведение при сортировке и сравнении не зависит от языка и региональных настроек, следует указать CultureInfo.InvariantCulture, в ином случае следует указывать CultureInfo.CurrentCulture.</Description>
+   <Resolution Name="IFormatProviderAlternate">В связи с тем, что поведение {0} может изменяться в зависимости от языка и региональных настроек текущего пользователя, следует заменить этот вызов в {1} вызовом {2}..Если результат {2} базируется на пользовательском вводе, укажите {3} в качестве параметра "IFormatProvider". В ином случае, если результат будет основываться на хранимых входных данных и использоваться программой, например при загрузке с диска или из базы данных, следует указать {4}.</Resolution>
+   <Resolution Name="IFormatProviderAlternateString">В связи с тем, что поведение {0} может изменяться в зависимости от языка и региональных настроек текущего пользователя, следует заменить этот вызов в {1} вызовом {2}. Если результат {2} базируется на пользовательском вводе, укажите {3} в качестве параметра "IformatProvider". В ином случае, если результат будет храниться и использоваться программой, например при сохранении на диск или в базу данных, следует указать {4}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182190(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300">
+   <Name>Укажите MessageBoxOptions</Name>
+   <Description>Для корректной работы в системах с расположением текста справа налево все вызовы MessageBox.Show должны осуществлять перегрузку, указывающую в качестве аргумента MessageBoxOptions. Для правильного отображения программы должны во время выполнения определить, запущены ли они в системе с расположением текста справа налево, и передать соответствующее значение MessageBoxOptions.</Description>
+   <Resolution Name="Default">Измените {0}, чтобы вызвать перегрузку MessageBox.Show, указывающую MessageBoxOptions, и убедитесь, что установлены значения MessageBoxOptions.RightAlign и MessageBoxOptions.RtlReading, если в родительском элементе управления для RightToLeft задано значение RightToLeft.Yes.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182191(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001">
+   <Name>Типы, которым принадлежат освобождаемые поля, должны быть освобождаемыми</Name>
+   <Description>Типы, объявляющие освобождаемые члены, также должны реализовывать IDisposable. Если типу не принадлежат какие-либо неуправляемые ресурсы, нет необходимости реализовывать для него метод завершения.</Description>
+   <Resolution Name="DependsOnFix">Реализуйте IDisposable для {0}, поскольку он создает члены следующих типов IDisposable: {1}. Если {0} ранее был доставлен, добавление в данный тип новых членов, реализующих IDisposable, считается критическим изменением для существующих потребителей.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182172(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726">
+   <Name>Используйте предпочитаемые термины</Name>
+   <Description>Используйте предпочитаемые термины вместо устаревших вариантов.</Description>
+   <Resolution Name="Type">Замените термин "{0}" в имени типа {1} на предпочитаемый вариант "{2}".</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182258(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="VariableNamesShouldNotMatchFieldNames" Category="Microsoft.Maintainability" CheckId="CA1500">
+   <Name>Имена переменных не должны совпадать с именами полей</Name>
+   <Description>Имена полей экземпляра и имена переменных не должны совпадать внутри одной области.</Description>
+   <Resolution Name="Local">Переменная {0}, объявленная в {1}, и поле экземпляра типа имеют одно и то же имя. Измените имя одного из этих элементов.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182216(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="maintainabilityrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="Ликвидировать объекты перед потерей области" Category="Microsoft.Reliability" CheckId="CA2000">
+   <Name>Ликвидировать объекты перед потерей области</Name>
+   <Description>Если освобождаемый объект не высвобождается явно до того, как все ссылки на него оказываются вне области имен, объект будет высвобожден в некоторый заранее не определенный момент, когда сборщик мусора запустит завершающий метод объекта. Так как может возникнуть событие исключения, препятствующее выполнению метода завершения объекта, объект будет ликвидирован в явной форме.</Description>
+   <Resolution Name="ExceptionEdge">В методе {0} объект {1} не уничтожается во всех возможных путях исключений. Следует вызвать метод System.IDisposable.Dispose для объекта {1} до того, как все ссылки на него будут находиться вне области действия.</Resolution>
+   <Resolution Name="NonExceptionEdge">В методе {0} вызовите System.IDisposable.Dispose для объекта {1} перед тем, как все ссылки на него будут вне области видимости.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182289(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="Не ликвидировать объекты несколько раз" Category="Microsoft.Usage" CheckId="CA2202">
+   <Name>Не ликвидировать объекты несколько раз</Name>
+   <Description>Правильно реализованный метод Dispose может вызываться неоднократно без создания исключения. Однако такой гарантии нет, и чтобы предотвратить создание System.ObjectDisposedException, не следует вызывать метод Dispose для объекта более одного раза.</Description>
+   <Resolution Name="Default">Объект "{0}" можно удалять более одного раза в методе {1}. Чтобы избежать исключения System.ObjectDisposedException, следует вызывать метод "Dispose" для объекта только один раз.: Lines: 181</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182334(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="Не передавать литералы в качестве локализованных параметров" Category="Microsoft.Globalization" CheckId="CA1303">
+   <Name>Не передавать литералы в качестве локализованных параметров</Name>
+   <Description>Строки литералов, внедренные в исходный код, сложно локализировать. Избегайте передачи строк типа литерал в качестве аргументов в случаях, когда ожидается локализованная строка.</Description>
+   <Resolution Name="KnownValue">Метод {0} передает строку-литерал, как параметр "{1}" при вызове {2}. Вместо этого выполните поиск следующей строки (строк) в таблице источника: {3}.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182187(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="Проверка запросов SQL на уязвимости безопасности" Category="Microsoft.Security" CheckId="CA2100">
+   <Name>Проверка запросов SQL на уязвимости безопасности</Name>
+   <Description>Командная строка SQL, создаваемая на основе введенных пользователем данных, уязвима к атакам типа "инъекция SQL". Microsoft SQL Server и другие серверы баз данных поддерживают хранимые процедуры и параметризованные SQL-запросы, что снижает риск атак путем внедрения.</Description>
+   <Resolution Name="WithNonLiterals">Строка запроса, переданная {0} в {1}, может содержать следующие переменные {2}. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182310(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Категория</String>
+  <String Key="Certainty">Достоверность</String>
+  <String Key="CollapseAll">Свернуть все</String>
+  <String Key="CheckId">ИД проверки</String>
+  <String Key="Error">Ошибка</String>
+  <String Key="Errors">ошибки</String>
+  <String Key="ExpandAll">Развернуть все</String>
+  <String Key="Help">Справка</String>
+  <String Key="Line">Строка</String>
+  <String Key="Messages">сообщения</String>
+  <String Key="LocationNotStoredInPdb">[расположение не сохранено в PDB]</String>
+  <String Key="Project">Проект</String>
+  <String Key="Resolution">Разрешение</String>
+  <String Key="Rule">Правило</String>
+  <String Key="RuleFile">Файл правил</String>
+  <String Key="RuleDescription">Описание правила</String>
+  <String Key="Source">Источник</String>
+  <String Key="Status">Состояние</String>
+  <String Key="Target">Цель</String>
+  <String Key="Warning">Предупреждение</String>
+  <String Key="Warnings">предупреждения</String>
+  <String Key="ReportTitle">Отчет по анализу кода</String>
+ </Localized>
+</FxCopReport>
